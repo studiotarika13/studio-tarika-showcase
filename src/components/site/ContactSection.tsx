@@ -54,7 +54,7 @@ export function ContactSection({ defaultService, index = "06" }: { defaultServic
           <dl className="mt-12 divide-y divide-on-ink/15 border-y border-on-ink/15">
             {[
               { k: "Email", v: CONTACT.email, href: mailtoUrl() },
-              { k: "Phone", v: CONTACT.phoneDisplay, href: CONTACT.phoneHref },
+              { k: "Phone", v: CONTACT.phoneDisplay, href: CONTACT.phoneHref, sans: true },
               { k: "WhatsApp", v: "Message directly", href: whatsappUrl(), external: true },
             ].map((row) => (
               <div key={row.k} className="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-4 py-5">
@@ -63,7 +63,10 @@ export function ContactSection({ defaultService, index = "06" }: { defaultServic
                   <a
                     href={row.href}
                     {...(row.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="group inline-flex max-w-full items-center gap-2 font-display text-xl md:text-2xl"
+                    className={cn(
+                      "group inline-flex max-w-full items-center gap-2 text-xl md:text-2xl",
+                      "sans" in row ? "font-sans font-light tracking-wide" : "font-display",
+                    )}
                   >
                     <span className="link-line truncate">{row.v}</span>
                     <ArrowUpRight className="size-4 shrink-0 text-brass transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />

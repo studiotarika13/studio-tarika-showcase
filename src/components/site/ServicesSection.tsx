@@ -16,7 +16,7 @@ export function ServicesSection({ index = "03" }: { index?: string }) {
               <span aria-hidden className="h-px w-10 bg-current opacity-40" />
               Services
             </p>
-            <h2 id="services-title" className="display-lg mt-6">
+            <h2 id="services-title" className="font-display mt-6 text-5xl leading-[1.02] tracking-tight xl:text-6xl">
               One studio, <em className="text-olive">every</em> part of the story.
             </h2>
             <p className="mt-6 max-w-sm leading-relaxed text-muted-foreground">

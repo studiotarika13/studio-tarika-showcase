@@ -88,9 +88,9 @@ export function Hero() {
                   <p className="mt-3 text-sm text-muted-foreground">Press any frame to play.</p>
                 </div>
               ) : (
-                <p className="mt-3 flex items-baseline justify-between gap-2 text-sm">
-                  <span className="truncate font-display text-base">{item.title}</span>
-                  <span className="eyebrow shrink-0 text-[0.625rem] text-muted-foreground">
+                <p className="mt-3 flex flex-col gap-1">
+                  <span className="truncate font-display text-base md:text-lg">{item.title}</span>
+                  <span className="eyebrow text-[0.625rem] text-muted-foreground">
                     {item.category === "AI films" ? "AI creative" : item.category}
                   </span>
                 </p>

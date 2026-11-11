@@ -1,6 +1,6 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { ArrowLeft, ArrowRight, ArrowUpRight, X } from "lucide-react";
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
 
 import type { WorkItem } from "@/data/work";
 import { drivePreviewUrl, driveViewUrl, isAiCreative } from "@/lib/portfolio";
@@ -22,7 +22,11 @@ export function useVideo() {
 export function VideoProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<{ items: WorkItem[]; index: number } | null>(null);
 
-  const open = useCallback((items: WorkItem[], index: number) => setState({ items, index }), []);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const open = useCallback((items: WorkItem[], index: number) => {
+    returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setState({ items, index });
+  }, []);
   const value = useMemo(() => ({ open }), [open]);
 
   const item = state ? state.items[state.index] : undefined;
@@ -38,6 +42,11 @@ export function VideoProvider({ children }: { children: ReactNode }) {
           <DialogPrimitive.Overlay className="fixed inset-0 z-[70] bg-veil backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
           <DialogPrimitive.Content
             className="fixed inset-0 z-[71] flex flex-col text-on-ink outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-[0.98] data-[state=closed]:animate-out data-[state=closed]:fade-out-0"
+            onCloseAutoFocus={(e) => {
+              // Return focus to the card that opened the player.
+              e.preventDefault();
+              returnFocus.current?.focus();
+            }}
             onKeyDown={(e) => {
               if (total < 2) return;
               if (e.key === "ArrowRight") go(1);

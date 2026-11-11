@@ -349,3 +349,16 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes studio-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: studio-marquee 48s linear infinite;
+}

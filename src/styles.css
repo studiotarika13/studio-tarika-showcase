@@ -4,14 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Bodoni Moda's hyphen renders as an invisible hairline; borrow the hyphen from a system serif. */
-@font-face {
-  font-family: "Studio Hyphen";
-  src:
-    local("Georgia"), local("Times New Roman"), local("Times"), local("Noto Serif"), local("Liberation Serif"),
-    local("DejaVu Serif");
-  unicode-range: U+002D, U+2010-2011;
-}
 
 /*
  * Studio Tarika design system — warm ivory paper, near-black ink, muted olive & brass.
@@ -20,7 +12,7 @@
  */
 
 @theme inline {
-  --font-display: "Studio Hyphen", "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --font-display: "Playfair Display", "Bodoni Moda", "Didot", "Times New Roman", serif;
   --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
 
   --radius-sm: calc(var(--radius) - 2px);

@@ -113,6 +113,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300..600&display=swap",
       },
+      {
+        // Bodoni Moda's hyphen is an invisible hairline: load only the hyphen glyph from Playfair Display.
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&text=-%E2%80%90%E2%80%91&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -8,8 +8,8 @@ export function Wordmark({ className }: { className?: string }) {
     <img
       src={wordmark.url}
       alt="Studio Tarika"
-      width={1688}
-      height={260}
+      width={1680}
+      height={258}
       className={cn("block h-auto select-none", className)}
       draggable={false}
     />
@@ -21,7 +21,7 @@ export function Monogram({ className, alt = "Studio Tarika monogram" }: { classN
     <img
       src={monogram.url}
       alt={alt}
-      width={724}
+      width={728}
       height={943}
       className={cn("block h-auto select-none", className)}
       draggable={false}

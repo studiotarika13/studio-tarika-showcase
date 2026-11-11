@@ -70,7 +70,7 @@ export function Hero() {
       <div className="mt-16 md:mt-20">
         <ul
           aria-label="Featured work"
-          className="no-scrollbar container-studio flex snap-x snap-mandatory items-start gap-3 overflow-x-auto pb-4 md:gap-4 lg:grid lg:grid-cols-[2.2fr_3fr_4.2fr_2.6fr_2fr] lg:gap-5 lg:overflow-visible"
+          className="no-scrollbar container-studio flex snap-x snap-mandatory scroll-px-5 md:scroll-px-10 items-start gap-3 overflow-x-auto pb-4 md:gap-4 lg:grid lg:grid-cols-[2.2fr_3fr_4.2fr_2.6fr_2fr] lg:gap-5 lg:overflow-visible"
         >
           {reel.map((item, i) => (
             <li

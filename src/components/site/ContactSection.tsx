@@ -48,7 +48,7 @@ export function ContactSection({ defaultService, index = "06" }: { defaultServic
             <span className="block">Start a conversation.</span>
           </h2>
           <p className="mt-8 max-w-md leading-relaxed text-on-ink-muted">
-            Tell us a little about your brand and what you have in mind. Bhavishya replies personally.
+            Tell us a little about your brand and what you have in mind. Your message goes straight to Bhavishya.
           </p>
 
           <dl className="mt-12 divide-y divide-on-ink/15 border-y border-on-ink/15">

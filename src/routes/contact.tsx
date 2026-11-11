@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — Studio Tarika" },
       {
         name: "description",
-        content: "Start a conversation with Studio Tarika by email, phone or WhatsApp. Bhavishya replies personally.",
+        content: "Start a conversation with Studio Tarika by email, phone or WhatsApp. Your message goes straight to Bhavishya.",
       },
       { property: "og:title", content: "Contact — Studio Tarika" },
       { property: "og:description", content: "Ready for your next chapter? Start a conversation." },

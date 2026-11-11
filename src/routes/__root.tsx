@@ -12,20 +12,23 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Footer } from "@/components/site/Footer";
+import { Header } from "@/components/site/Header";
+import { VideoProvider } from "@/components/site/VideoProvider";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h1 className="font-display text-8xl italic text-olive">404</h1>
+        <h2 className="font-display mt-4 text-3xl text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="label-sm inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-primary-foreground transition-colors hover:bg-olive"
           >
             Go home
           </Link>
@@ -81,21 +84,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Studio Tarika — Creative & Marketing Agency" },
+      {
+        name: "description",
+        content:
+          "Studio Tarika is an independent, founder-led creative and marketing studio: strategy, social media, shoots, graphic design, web development, video and AI creative.",
+      },
+      { name: "author", content: "Studio Tarika" },
+      { name: "theme-color", content: "#F4F0E8" },
+      { property: "og:site_name", content: "Studio Tarika" },
+      { property: "og:title", content: "Studio Tarika — Creative & Marketing Agency" },
+      {
+        property: "og:description",
+        content: "Strategy, stories and digital experiences. Thoughtfully made for brands ready for their next chapter.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300..600&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -106,11 +123,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <HeadContent />
       </head>
-      <body>
+      <body className="paper-grain">
         {children}
         <Scripts />
       </body>
@@ -123,8 +141,20 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <VideoProvider>
+        <a
+          href="#main"
+          className="label-sm sr-only z-[90] rounded-full bg-ink px-5 py-3 text-on-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
+        <Header />
+        <main id="main">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <Footer />
+      </VideoProvider>
     </QueryClientProvider>
   );
 }

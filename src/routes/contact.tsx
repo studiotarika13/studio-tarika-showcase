@@ -4,7 +4,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>): { service?: string } =>
-    typeof search.service === "string" ? { service: search.service } : {},
+    typeof search["service"] === "string" ? { service: search["service"] } : {},
   head: () => ({
     meta: [
       { title: "Contact — Studio Tarika" },

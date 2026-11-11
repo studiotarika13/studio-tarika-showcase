@@ -10,7 +10,7 @@ import { Reveal } from "./Reveal";
 const fieldClass =
   "peer w-full border-0 border-b border-on-ink/25 bg-transparent px-0 pb-3 pt-2 text-lg text-on-ink placeholder:text-on-ink/35 transition-colors focus:border-brass focus:outline-none focus-visible:outline-none";
 
-export function ContactSection({ defaultService, index = "06" }: { defaultService?: string; index?: string }) {
+export function ContactSection({ defaultService, index = "06" }: { defaultService?: string | undefined; index?: string }) {
   const uid = useId();
   const initial = SERVICES.find((s) => s.slug === defaultService)?.title ?? "";
   const [form, setForm] = useState({ name: "", business: "", service: initial, brief: "" });
@@ -168,7 +168,7 @@ function Field({
 }: {
   id: string;
   label: string;
-  error?: string;
+  error?: string | undefined;
   children: React.ReactNode;
 }) {
   return (

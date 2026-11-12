@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Portfolio, services and contact data live in `src/data` and `src/lib`; page sections live in `src/components/site`. Why: content edits stay in one place, separate from layout.
+- Video thumbnails are asset pointers in `src/assets/work`, loaded through `src/lib/thumbnails.ts`, with a Drive thumbnail fallback. Why: fast, stable previews without depending on Drive.
+- Font roles are set only through `--font-display`, `--font-sans` and `--font-highlight` in `src/styles.css`; highlighted words use `<em>` or `font-highlight`. Why: a font change is one edit, and logos are images that never depend on fonts.
+- Every route sets `staticData.sitemap`, its own canonical and `og:url`; `/sitemap.xml` is generated from the router. Why: new pages join the sitemap automatically.

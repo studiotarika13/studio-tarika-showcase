@@ -85,7 +85,7 @@ export const HERO_IDS = {
   tdr: "1oMjmo7-BBe92tvsZyCZ5XNf_gwGnH0nZ",
   ons: "1ScviTZzBPaIwYZnh39I_4Djq-R_8vVIb",
   jaipur: "1FE_XmWf7Y2Qv3ZhpOwAocx8roO9gd65-",
-  wine: "18S1kPiRQmtfLVipKFE3nMcUxUvJOjK69",
+  wine: "1FGmQ52pKxKgtjXTKHlh3r3Mdc3-fW_Bg",
   ai: "1UZ0O8Makt-hJIUq4SomGJ6AferKvZHIn",
 } as const;
 

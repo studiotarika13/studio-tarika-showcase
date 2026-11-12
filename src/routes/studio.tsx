@@ -7,6 +7,7 @@ import { ProcessSection } from "@/components/site/ProcessSection";
 import { StudioSection } from "@/components/site/StudioSection";
 
 export const Route = createFileRoute("/studio")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Studio — Studio Tarika" },
@@ -19,7 +20,9 @@ export const Route = createFileRoute("/studio")({
       { property: "og:description", content: "Founder-led. Directly involved. One creative lead from brief to review." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/studio" },
     ],
+    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/studio" }],
   }),
   component: StudioPage,
 });

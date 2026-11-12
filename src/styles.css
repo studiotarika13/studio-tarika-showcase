@@ -7,13 +7,14 @@
 
 /*
  * Studio Tarika design system — warm ivory paper, near-black ink, muted olive & brass.
- * Display: Bodoni Moda (echoes the high-contrast monogram). Labels/body: Jost (echoes the
- * geometric wordmark). All colours are oklch tokens; components use semantic classes only.
+ * Type: Playfair Display everywhere; Impact (Anton fallback) for highlighted words only.
+ * Logos are images and keep their own lettering. All colours are oklch tokens; components use semantic classes only.
  */
 
 @theme inline {
-  --font-display: "Playfair Display", "Bodoni Moda", "Didot", "Times New Roman", serif;
-  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Playfair Display", "Times New Roman", serif;
+  --font-sans: "Playfair Display", "Times New Roman", serif;
+  --font-highlight: Impact, "Anton", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
 
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
@@ -142,6 +143,14 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Highlighted words inside headlines and taglines */
+  em {
+    font-family: var(--font-highlight);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+
   ::selection {
     background: var(--olive);
     color: var(--on-ink);
@@ -215,6 +224,13 @@
   @media (width >= 80rem) {
     padding-inline: 3.5rem;
   }
+}
+
+@utility font-highlight {
+  font-family: var(--font-highlight);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.005em;
 }
 
 /* Animated underline for text links */

@@ -12,6 +12,7 @@ import { WorkSection } from "@/components/site/WorkSection";
 // The home route ships no og:image, so serve-time hosting can inject the
 // project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Studio Tarika — Creative & Marketing Agency" },
@@ -27,6 +28,33 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Studio Tarika",
+          url: "https://studio-tarika-showcase.lovable.app/",
+          description:
+            "Independent, founder-led creative and marketing studio: brand strategy, social media marketing, shoots, video editing & AI creative, graphic design and web development.",
+          email: "tarikabhavishya@gmail.com",
+          telephone: "+91 81939 33388",
+          founder: { "@type": "Person", name: "Bhavishya Tarika", jobTitle: "Founder & Creative Lead" },
+          knowsAbout: [
+            "Brand strategy",
+            "Social media marketing",
+            "Video editing",
+            "Jewellery videos",
+            "AI creative",
+            "Graphic design",
+            "Web development",
+          ],
+        }),
+      },
     ],
   }),
   component: Index,

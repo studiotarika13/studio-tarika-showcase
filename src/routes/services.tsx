@@ -6,19 +6,22 @@ import { ProcessSection } from "@/components/site/ProcessSection";
 import { ServicesSection } from "@/components/site/ServicesSection";
 
 export const Route = createFileRoute("/services")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Services — Studio Tarika" },
+      { title: "Services — Social Media, Video Editing & Design | Studio Tarika" },
       {
         name: "description",
         content:
-          "Brand strategy, social media management, shoots, video editing & AI creative, graphic design and web development — one founder-led studio.",
+          "Brand strategy, social media marketing & management, product and jewellery shoots, video editing & AI creative, graphic design and web development.",
       },
-      { property: "og:title", content: "Services — Studio Tarika" },
+      { property: "og:title", content: "Services — Social Media, Video Editing & Design | Studio Tarika" },
       { property: "og:description", content: "Six services, one creative lead, from first brief to monthly review." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/services" },
     ],
+    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/services" }],
   }),
   component: ServicesPage,
 });

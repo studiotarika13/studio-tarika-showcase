@@ -37,7 +37,7 @@ export function Hero() {
             <span className="animate-mask block" style={{ animationDelay: "120ms" }}>Make your brand</span>
           </span>
           <span className="block overflow-hidden pb-[0.06em] pl-[8vw]">
-            <span className="animate-mask block italic text-olive" style={{ animationDelay: "260ms" }}>impossible</span>
+            <span className="animate-mask block font-highlight text-olive" style={{ animationDelay: "260ms" }}>impossible</span>
           </span>
           <span className="block overflow-hidden pb-[0.08em]">
             <span className="animate-mask block" style={{ animationDelay: "400ms" }}>to overlook.</span>

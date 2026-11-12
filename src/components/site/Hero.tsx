@@ -15,14 +15,11 @@ export function Hero() {
   const reel = [pick(HERO_IDS.tdr), pick(HERO_IDS.ons), pick(HERO_IDS.jaipur), pick(HERO_IDS.wine), pick(HERO_IDS.ai)];
   const play = (i: number) => open(reel, i);
 
-  // Desktop stagger for a cinematic, off-grid strip.
-  const frame = [
-    "w-[42vw] sm:w-[30vw] lg:w-auto lg:mt-28",
-    "w-[56vw] sm:w-[38vw] lg:w-auto",
-    "w-[80vw] sm:w-[56vw] lg:w-auto lg:mt-12",
-    "w-[42vw] sm:w-[30vw] lg:w-auto lg:mt-16",
-    "w-[42vw] sm:w-[30vw] lg:w-auto lg:mt-40",
-  ];
+  // One even row: four reels flank a larger long-form frame, all the same height.
+  // Reel width W gives height 16W/9; the middle frame is 2.5W wide, so its ratio is 45:32.
+  const REEL = "w-[38vw] sm:w-[24vw] lg:w-auto";
+  const WIDE = "w-[95vw] sm:w-[60vw] lg:w-auto";
+  const WIDE_ASPECT = "aspect-[45/32]";
 
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden pt-28 md:pt-36">
@@ -70,15 +67,22 @@ export function Hero() {
       <div className="mt-16 md:mt-20">
         <ul
           aria-label="Featured work"
-          className="no-scrollbar container-studio flex snap-x snap-mandatory scroll-px-5 md:scroll-px-10 items-start gap-3 overflow-x-auto pb-4 md:gap-4 lg:grid lg:grid-cols-[2.2fr_3fr_4.2fr_2.6fr_2fr] lg:gap-5 lg:overflow-visible"
+          className="no-scrollbar container-studio flex snap-x snap-mandatory scroll-px-5 md:scroll-px-10 items-start gap-3 overflow-x-auto pb-4 md:gap-4 lg:grid lg:grid-cols-[1fr_1fr_2.5fr_1fr_1fr] lg:gap-5 lg:overflow-visible"
         >
           {reel.map((item, i) => (
             <li
               key={item.id}
-              className={cn("animate-rise shrink-0 snap-start", frame[i])}
+              className={cn("animate-rise shrink-0 snap-start", item.format === "wide" ? WIDE : REEL)}
               style={{ animationDelay: `${780 + i * 110}ms` }}
             >
-              <WorkCard item={item} onPlay={() => play(i)} bare eager className="shadow-frame" />
+              <WorkCard
+                item={item}
+                onPlay={() => play(i)}
+                bare
+                eager
+                className="shadow-frame"
+                {...(item.format === "wide" ? { aspectClassName: WIDE_ASPECT } : {})}
+              />
               {i === 2 ? (
                 <div className="mt-6 hidden lg:block">
                   <p className="eyebrow text-muted-foreground">Selected work</p>

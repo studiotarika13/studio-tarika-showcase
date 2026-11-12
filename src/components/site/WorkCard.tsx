@@ -15,6 +15,8 @@ interface WorkCardProps {
   bare?: boolean;
   sizes?: string;
   eager?: boolean;
+  /** Overrides the frame ratio class (e.g. to match heights in the hero row). */
+  aspectClassName?: string;
 }
 
 export function PlayMark({ className }: { className?: string }) {
@@ -31,7 +33,7 @@ export function PlayMark({ className }: { className?: string }) {
   );
 }
 
-export function WorkCard({ item, number, onPlay, className, bare, eager }: WorkCardProps) {
+export function WorkCard({ item, number, onPlay, className, bare, eager, aspectClassName }: WorkCardProps) {
   const [failed, setFailed] = useState(false);
   const ai = isAiCreative(item);
   const label = ai ? "AI creative" : item.category;
@@ -44,7 +46,7 @@ export function WorkCard({ item, number, onPlay, className, bare, eager }: WorkC
         aria-label={`Play ${item.title} — ${label}`}
         className={cn(
           "relative block w-full overflow-hidden bg-stone text-left",
-          item.format === "reel" ? "aspect-[9/16]" : "aspect-video",
+          aspectClassName ?? (item.format === "reel" ? "aspect-[9/16]" : "aspect-video"),
         )}
       >
         {failed ? (

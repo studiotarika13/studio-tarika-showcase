@@ -72,7 +72,7 @@ export const WORK: WorkItem[] = [
 export const CURATED_IDS: string[] = [
   "1ScviTZzBPaIwYZnh39I_4Djq-R_8vVIb", // ONS Necklace
   "1oMjmo7-BBe92tvsZyCZ5XNf_gwGnH0nZ", // TDR Teaser
-  "1thPQU4FbpauSyPIWyYXltnbVu7l_0AN3", // Wine Educator 1
+  "1FGmQ52pKxKgtjXTKHlh3r3Mdc3-fW_Bg", // Creator's Corner
   "1UZ0O8Makt-hJIUq4SomGJ6AferKvZHIn", // AI Necklace Showreel
   "1FE_XmWf7Y2Qv3ZhpOwAocx8roO9gd65-", // Jaipur Watch
   "1RKoboatyPM8KKJ-YuQv6ejRDRYVE-yoD", // Ring Story

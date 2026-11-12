@@ -6,19 +6,22 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { WORK } from "@/data/work";
 
 export const Route = createFileRoute("/work")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Work — Studio Tarika" },
+      { title: "Work — Jewellery Videos, Reels & Brand Films | Studio Tarika" },
       {
         name: "description",
         content:
-          "The full Studio Tarika portfolio: jewellery films, creator series, UGC, brand stories, long-form video, trading education and AI creative.",
+          "Portfolio of jewellery videos, brand films, creator reels, UGC, long-form video and AI creative made by Studio Tarika.",
       },
-      { property: "og:title", content: "Work — Studio Tarika" },
+      { property: "og:title", content: "Work — Jewellery Videos, Reels & Brand Films | Studio Tarika" },
       { property: "og:description", content: "Reels, long-form films and AI creative by Studio Tarika." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/work" },
     ],
+    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/work" }],
   }),
   component: WorkPage,
 });

@@ -17,7 +17,7 @@ describe("portfolio", () => {
   it("opens with the curated set of 8 led by ONS Necklace, TDR Teaser and Wine Educator", () => {
     expect(INITIAL_VISIBLE).toBe(8);
     const titles = orderedWork().slice(0, 8).map((w) => w.title);
-    expect(titles.slice(0, 3)).toEqual(["ONS Necklace", "TDR Teaser", "Wine Educator 1"]);
+    expect(titles.slice(0, 3)).toEqual(["ONS Necklace", "TDR Teaser", "Creator's Corner"]);
     expect(titles).toContain("Jaipur Watch");
     expect(titles).toContain("AI Necklace Showreel");
   });

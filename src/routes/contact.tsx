@@ -17,9 +17,9 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: "Ready for your next chapter? Start a conversation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/contact" },
+      { property: "og:url", content: "https://studiotarika.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://studiotarika.com/contact" }],
   }),
   component: ContactPage,
 });

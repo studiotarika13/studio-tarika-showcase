@@ -19,9 +19,9 @@ export const Route = createFileRoute("/work")({
       { property: "og:description", content: "Reels, long-form films and AI creative by Studio Tarika." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/work" },
+      { property: "og:url", content: "https://studiotarika.com/work" },
     ],
-    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/work" }],
+    links: [{ rel: "canonical", href: "https://studiotarika.com/work" }],
   }),
   component: WorkPage,
 });

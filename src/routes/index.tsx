@@ -28,9 +28,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/" },
+      { property: "og:url", content: "https://studiotarika.com/" },
     ],
-    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://studiotarika.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "Studio Tarika",
-          url: "https://studio-tarika-showcase.lovable.app/",
+          url: "https://studiotarika.com/",
           description:
             "Independent, founder-led creative and marketing studio: brand strategy, social media marketing, shoots, video editing & AI creative, graphic design and web development.",
           email: "tarikabhavishya@gmail.com",

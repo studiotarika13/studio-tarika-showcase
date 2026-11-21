@@ -19,9 +19,9 @@ export const Route = createFileRoute("/services")({
       { property: "og:description", content: "Six services, one creative lead, from first brief to monthly review." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/services" },
+      { property: "og:url", content: "https://studiotarika.com/services" },
     ],
-    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/services" }],
+    links: [{ rel: "canonical", href: "https://studiotarika.com/services" }],
   }),
   component: ServicesPage,
 });

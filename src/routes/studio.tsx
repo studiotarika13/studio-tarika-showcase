@@ -20,9 +20,9 @@ export const Route = createFileRoute("/studio")({
       { property: "og:description", content: "Founder-led. Directly involved. One creative lead from brief to review." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://studio-tarika-showcase.lovable.app/studio" },
+      { property: "og:url", content: "https://studiotarika.com/studio" },
     ],
-    links: [{ rel: "canonical", href: "https://studio-tarika-showcase.lovable.app/studio" }],
+    links: [{ rel: "canonical", href: "https://studiotarika.com/studio" }],
   }),
   component: StudioPage,
 });
